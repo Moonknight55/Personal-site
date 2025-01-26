@@ -129,12 +129,8 @@ footer {
         align-items: center;
     }
 
-    .container {
-        width: 90%;
-    }
 
-    #contact form input, #contact form textarea {
-        width: 100%;
+    
     }
     
     .container {
@@ -144,12 +140,7 @@ footer {
     }
     
     
-    @media screen and (max-width: 768px) {
-    .typing-effect {
-        font-size: 1.2em; /* Decrease font size */
-        width: 90%; /* Make sure it fits */
-    }
-    }
+    
     
 }
 #typing-effect {
