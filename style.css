@@ -136,6 +136,25 @@ footer {
     #contact form input, #contact form textarea {
         width: 100%;
     }
+    
+    .container {
+    width: 100%;
+    max-width: 100vw; /* Viewport width */
+    overflow: hidden;
+    }
+    
+    .typing-effect {
+    white-space: nowrap;
+    overflow: hidden;
+    }
+    
+    @media screen and (max-width: 768px) {
+    .typing-effect {
+        font-size: 1.2em; /* Decrease font size */
+        width: 90%; /* Make sure it fits */
+    }
+    }
+    
 }
 #typing-effect {
   text-align: center;
