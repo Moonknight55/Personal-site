@@ -9,7 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header><section id="typing-effect">
+  <h1>I am <span id="dynamic-text"></span></h1>
+    </section>
+        
         <div class="container">
             <h1>Dipesh Adhikari</h1>
             <nav>
@@ -62,5 +65,37 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
+</body> <script>
+  const texts = ["Dipesh Adhikari", "a Developer", "a Designer", "a Learner"];
+  let index = 0;
+  let charIndex = 0;
+  let currentText = "";
+  let isDeleting = false;
+
+  function typeEffect() {
+    const element = document.getElementById("dynamic-text");
+
+    if (isDeleting) {
+      currentText = texts[index].substring(0, charIndex--);
+    } else {
+      currentText = texts[index].substring(0, charIndex++);
+    }
+
+    element.textContent = currentText;
+
+    if (!isDeleting && charIndex === texts[index].length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1000); // Pause before deleting
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % texts.length; // Loop back to the first text
+      setTimeout(typeEffect, 500); // Pause before typing the next word
+    } else {
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+  }
+
+  typeEffect();
+</script>
+    
 </html>
